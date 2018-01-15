@@ -33,12 +33,13 @@ public class CubeController : MonoBehaviour
     }
 
     //◆課題◆衝突時に呼ばれる関数
-    void OnCollisionEnter(Collision other)
+    void OnCollisionEnter2D(Collision2D other)
     {
         // 地面またはキューブと衝突したら、効果音を鳴らす
-        if (other.gameObject.tag == "GroudTag" || other.gameObject.tag == "CubeTag")
+        if (other.gameObject.tag == "GroundTag" || other.gameObject.tag == "CubeTag")
         {
-            GetComponent<AudioSource>().volume = 1;
+            AudioSource audio = GetComponent<AudioSource>();
+            audio.Play();
         }
     }
 
